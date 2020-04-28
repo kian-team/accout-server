@@ -2,7 +2,7 @@
 
 ## 运行命令
 
-`javascript
+`
 
 //本地测试运行dev
 $ yarn dev
@@ -13,6 +13,7 @@ $ yarn star
 //停止PM2运行
 
 $ yarn stop 
+
 `
 
 ### 目录结构
