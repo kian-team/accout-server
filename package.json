@@ -1,0 +1,31 @@
+{
+  "name": "accoutapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "pm2 start pm2.config.js",
+    "stop": "pm2 stop accoutapp && pm2 delete accoutapp"
+  },
+  "dependencies": {
+    "is": "^3.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-compress": "^3.1.0",
+    "koa-error": "^3.2.0",
+    "koa-etag": "^3.0.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0",
+    "locutus": "^2.0.11",
+    "log4js": "^6.2.1",
+    "md5": "^2.2.1",
+    "mysql": "^2.18.1",
+    "pm2": "^4.4.0",
+    "redis": "^3.0.2",
+    "uuid": "^7.0.3"
+  }
+}

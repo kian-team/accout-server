@@ -1,0 +1,43 @@
+2020-04-27 14:42:25: server is running on port: 8080
+2020-04-27 14:42:25: server is running on port: 8080
+2020-04-27 14:42:25: server is running on port: 8080
+2020-04-27 14:42:25: server is running on port: 8080
+2020-04-27 15:04:52: server is running on port: 8080
+2020-04-27 15:04:52: server is running on port: 8080
+2020-04-27 15:04:52: server is running on port: 8080
+2020-04-27 15:04:52: server is running on port: 8080
+2020-04-27 15:05:36: server is running on port: 8080
+2020-04-27 15:05:36: server is running on port: 8080
+2020-04-27 15:05:36: server is running on port: 8080
+2020-04-27 15:05:36: server is running on port: 8080
+2020-04-27 15:07:15: server is running on port: 8080
+2020-04-27 15:07:15: server is running on port: 8080
+2020-04-27 15:07:15: server is running on port: 8080
+2020-04-27 15:07:15: server is running on port: 8080
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 11:17:32: server is running on port: 5555
+2020-04-28 11:17:32: server is running on port: 5555
+2020-04-28 11:17:31: server is running on port: 5555
+2020-04-28 15:25:46: server is running on port: 5555
+2020-04-28 15:25:46: server is running on port: 5555
+2020-04-28 15:25:46: server is running on port: 5555
+2020-04-28 15:25:46: server is running on port: 5555
+2020-04-28 15:34:36: server is running on port: 5555
+2020-04-28 15:34:37: server is running on port: 5555
+2020-04-28 15:34:37: server is running on port: 5555
+2020-04-28 15:34:37: server is running on port: 5555
+2020-04-28 15:40:13: server is running on port: 5555
+2020-04-28 15:40:13: server is running on port: 5555
+2020-04-28 15:40:13: server is running on port: 5555
+2020-04-28 15:40:13: server is running on port: 5555
+2020-04-28 15:40:23: [32m[2020-04-28T15:40:23.112] [INFO] [Default] - [39mPOST 200 /oa/login 请求参数： {"name":"hello","password":"123456","sdid":"3","sessionvalue":"NvzwpvXuIwZyhtYw","code":"1","tid":"34"} 响应参数： {"code":0,"msg":"ok!","data":{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVpZCI6IjhlOWEyYTkwLTg4MmYtMTFlYS1iZWQyLTY1MzNiZmQwMzU3NyJ9LCJleHAiOjE1ODgxNDYwMjMsImlhdCI6MTU4ODA1OTYyM30.OW_NRDqtYB4ZPyib4fMWc_tj8tUIrhRMiqjELsEZrxgcFc6_G4X4VMgNoEORlo5O-jepbi2_bDlNFFRE5SRVPpnF4GezLCO8eOSMrt11eas2xt-e4MHDeOryZuuSCKQIR8MG5Y-IvbGTIquvLGbWL2ew3n-4UBKQRHoA9fEuiEaGD7yO4kd0ynCZaQpECDJaAXtFWkfXAjKlFa2B4uiDomUlQGNOt689saglCrpIRrzt_K3uN4sQ-rydDN5b64KcyMkXR9J2aOjAWZcoNl1TrNDHXKuF8iZRt-vO7TI2fVkwNFFsmBoxLHlUOdbG4oPSezLg4DiPiSlLyKKlpiqbjQ"}} - ::1 - 36ms
+2020-04-28 15:40:33: [32m[2020-04-28T15:40:33.977] [INFO] [Default] - [39mGET 200 /oa/user/auth 请求参数： {} 响应参数： {"code":1005,"msg":"请先登录"} - ::1 - 3ms
+2020-04-28 15:42:11: [32m[2020-04-28T15:42:11.618] [INFO] [Default] - [39mGET 200 /oa/user/auth 请求参数： {} 响应参数： {"code":1005,"msg":"请先登录"} - ::1 - 2ms
+2020-04-28 15:42:12: [32m[2020-04-28T15:42:12.112] [INFO] [Default] - [39mGET 200 /oa/user/auth 请求参数： {} 响应参数： {"code":1005,"msg":"请先登录"} - ::1 - 1ms
+2020-04-28 15:42:12: [32m[2020-04-28T15:42:12.595] [INFO] [Default] - [39mGET 200 /oa/user/auth 请求参数： {} 响应参数： {"code":1005,"msg":"请先登录"} - ::1 - 1ms
+2020-04-28 15:42:23: [32m[2020-04-28T15:42:23.217] [INFO] [Default] - [39mPOST 200 /oa/login 请求参数： {"name":"hello","password":"123456","sdid":"3","sessionvalue":"NvzwpvXuIwZyhtYw","code":"1","tid":"34"} 响应参数： {"code":0,"msg":"ok!","data":{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVpZCI6IjhlOWEyYTkwLTg4MmYtMTFlYS1iZWQyLTY1MzNiZmQwMzU3NyJ9LCJleHAiOjE1ODgxNDYxNDMsImlhdCI6MTU4ODA1OTc0M30.E6_pKUL0nqH7mhbt1ji2Y3ePiWtXmNP1gBIIKEBc1XgGE4gbg9Vv2y5h_939_QPj0hpQGR0Z02MxAl5aXB-reAtDwYcxCzyi7JtaxDEUB6zjTzjrwgd2pujvsi5mp6PaGk0JMBWKNrnEYOL73xcrD1T4oLrQJmPxE0mlz-hdUQNLp55vs37NjxTVxGgT7yt4wUrLwPHD_8nqH6S7UHASYg0_oguzKlauSdUhKOvCxzZ8yxQBu2B9xBat4tF2Yf9XKnBOfSOHlOUdUDr3k3NGjxpsOcX1xZOlFIHqNuWIHO0eK_mWZVS2O_sh3UlMGb29ohogpeg-tI7-mYmHHQU6-A"}} - ::1 - 4ms
+2020-04-28 15:43:28: [32m[2020-04-28T15:43:28.263] [INFO] [Default] - [39mPOST 200 /oa/login 请求参数： {"name":"hello","password":"123456","sdid":"3","sessionvalue":"NvzwpvXuIwZyhtYw","code":"1","tid":"34"} 响应参数： {"code":0,"msg":"ok!","data":{"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVpZCI6IjhlOWEyYTkwLTg4MmYtMTFlYS1iZWQyLTY1MzNiZmQwMzU3NyJ9LCJleHAiOjE1ODgxNDYyMDgsImlhdCI6MTU4ODA1OTgwOH0.p_WVWaP4SUrY-v9Lz3oOMR0YvcRM_DmRhG2olpNdnjhO8rkh9gmlbmQ0c2MJfX0XiR6Pgteg8znFkWPzKmIrKAwCbx8-ndcyQPqB0tbhINiw7Z6qsr97KnYMStwUpBCwAZeUbn-sgTXgG5DtlbD2CgOxRKww9K0gc7OjO3Oc60767q3EyLS6e0DErvKWduZ5ZBbuddQPYnWGFvfrubNlgBg7MC4SiIDTR1yg0j2bWawew98SfGDFe9A58JgBfmEkKzEu7cpl8v-VDFvs7r7mmHy7GXUfB8jh75Khnxi4kMRvTV_R__ovOtbvI-hxYzs6p_sjwv3iARw5I8NNKwmkCw"}} - ::1 - 3ms
