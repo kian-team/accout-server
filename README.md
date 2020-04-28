@@ -2,19 +2,19 @@
 
 ## 运行命令
 
-`
+```bash
 
 //本地测试运行dev
-$ yarn dev
+# yarn dev
 
 //使用PM2运行
-$ yarn star
+# yarn star
 
 //停止PM2运行
 
-$ yarn stop 
+# yarn stop 
 
-`
+```
 
 ### 目录结构
 
