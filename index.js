@@ -12,37 +12,26 @@ const Tips = require('./utils/tip');
 const logger = require('./middlewares/logger');
 const config = require('./config')
 const log = global.console.log.bind(console);
-const PORT = process.env.PORT || 5555;
+const PORT = process.env.PORT || config.port || 5555;
 const app = new koa();
-
-app.use(koaBody());
-app.use(logger.loggerMiddleware);
-app.use(static(config.staticPath));
-app.use(async (ctx, next) => {
-  let { url = '' } = ctx;
-  if (url.indexOf('/oa/user/') > -1) {//需要校验登录态
-    let header = ctx.request.header;
-    let { loginedtoken } = header;
-
-    if (loginedtoken) {
-      let result = Utils.verifyToken(loginedtoken);
-      let { uid } = result;
-      if (uid) {
-        ctx.state = { uid, loginedtoken };
-        await next();
-      } else {
-        return ctx.body = Tips[1005];
-      }
-    } else {
-      return ctx.body = Tips[1005];
+const { responseHandler } = require('./middlewares/response')
+const { UserAuth } = require('./middlewares/auth');
+app.use(koaBody(
+  {
+    multipart: true,
+    formidable: {
+      maxFileSize: 200 * 1024 * 1024	// 设置上传文件大小最大限制，默认2M
     }
-  } else {
-    await next();
   }
+));
+// 日志中间件
+app.use(logger.loggerMiddleware);
+// 静态资源文件夹
+app.use(static(config.staticPath));
 
-
-
-});
+// 用户权限校验
+app.use(UserAuth);
+// 错误处理
 app.use(errorHandler());
 app.use(bodyParser());
 
@@ -54,6 +43,8 @@ app.use(compress({
   threshold: 2048
 }));
 router(app);
+// Response
+app.use(responseHandler)
 http.createServer(app.callback()).listen(PORT);
 
 

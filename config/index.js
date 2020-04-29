@@ -5,6 +5,7 @@ module.exports = {
   secret: 'secret',
   publicDir: path.resolve(__dirname, '../public'),
   staticPath: path.resolve(__dirname, '../static'),
+  FilePath: path.resolve(__dirname, '../static/files'),
   logPath: path.resolve(__dirname, '../logs/koa-template.log'),
   mongoDB: {
     database: 'mall',
