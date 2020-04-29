@@ -1,35 +1,9 @@
-const mysql = require('mysql');
-
-let config = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'koa_demo',
-  port: 3306,
-  multipleStatements: true
-}
-
-let pool = mysql.createPool(config);
-
-let query = (sql, values) => {
-  return new Promise((resolve, reject) => {
-    pool.getConnection((err, connection) => {
-      if (err) {
-        reject(err)
-      } else {
-        connection.query(sql, values, (err, rows) => {
-          if (err) {
-            reject(err)
-          } else {
-            resolve(rows);
-          }
-          connection.release()
-        })
-      }
-    })
-  })
-}
+const Mysql = require('./mysql');
+const Redis = require('./redis');
 
 module.exports = {
-  query
+  query: Mysql.query,
+  setKey: Redis.setKey,
+  getKey: Redis.getKey,
+  setExpire: Redis.setExpire
 }
