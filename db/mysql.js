@@ -1,13 +1,14 @@
 const mysql = require('mysql');
+const { MysqlConfig: config } = require('../config');
 
-let config = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'koa_demo',
-  port: 3306,
-  multipleStatements: true
-}
+// let config = {
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'root',
+//   database: 'koa_demo',
+//   port: 3306,
+//   multipleStatements: true
+// }
 
 let pool = mysql.createPool(config);
 
