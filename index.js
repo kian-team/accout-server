@@ -5,15 +5,16 @@ const etag = require('koa-etag');
 const bodyParser = require('koa-bodyparser');
 const errorHandler = require('koa-error');
 const compress = require('koa-compress');
-const log = global.console.log.bind(console);
-const PORT = process.env.PORT || 5555;
 const koaBody = require('koa-body');
-const app = new koa();
 const Utils = require('./utils');
 const router = require('./router');
 const Tips = require('./utils/tip');
 const logger = require('./middlewares/logger');
 const config = require('./config')
+const log = global.console.log.bind(console);
+const PORT = process.env.PORT || 5555;
+const app = new koa();
+
 app.use(koaBody());
 app.use(logger.loggerMiddleware);
 app.use(static(config.staticPath));
