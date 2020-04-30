@@ -6,6 +6,7 @@ const bodyParser = require('koa-bodyparser');
 const errorHandler = require('koa-error');
 const compress = require('koa-compress');
 const koaBody = require('koa-body');
+const cors = require('koa2-cors')
 const Utils = require('./utils');
 const router = require('./router');
 const Tips = require('./utils/tip');
@@ -14,8 +15,10 @@ const config = require('./config')
 const log = global.console.log.bind(console);
 const PORT = process.env.PORT || config.port || 5555;
 const app = new koa();
-const { responseHandler } = require('./middlewares/response')
+const { responseHandler } = require('./middlewares/response');
+const { corsHandler } = require('./middlewares/cors');
 const { UserAuth } = require('./middlewares/auth');
+
 app.use(koaBody(
   {
     multipart: true,
@@ -36,6 +39,9 @@ app.use(errorHandler());
 app.use(bodyParser());
 
 app.use(etag());
+
+// Cors
+app.use(cors(corsHandler))
 
 // compressor
 app.use(compress({
