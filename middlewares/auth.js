@@ -1,5 +1,5 @@
 const Utils = require('../utils');
-
+const Tips  = require('../utils/tip');
 const UserAuth = async (ctx, next) => {
   let { url = '' } = ctx;
   if (url.indexOf('/oa/user/') > -1) {//需要校验登录态
