@@ -7,7 +7,7 @@ const Account = {};
 Account.list = async (ctx, next) => {
   let { uid } = ctx.state || {};
 
-  let sql = 'SELECT account_name,account_desc,account_time, account_type, account_id FROM t_account WHERE uid=?', value = [uid];
+  let sql = 'SELECT account_name,account_desc,account_money,account_time, account_type, account_id FROM t_account WHERE uid=?', value = [uid];
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
       ctx.body = { ...Tips[0], data: { total: res.length, list: res } };
