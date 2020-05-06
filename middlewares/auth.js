@@ -4,13 +4,13 @@ const UserAuth = async (ctx, next) => {
   let { url = '' } = ctx;
   if (url.indexOf('/oa/user/') > -1) {//需要校验登录态
     let header = ctx.request.header;
-    let { loginedtoken } = header;
+    let { authorization } = header;
 
-    if (loginedtoken) {
-      let result = Utils.verifyToken(loginedtoken);
+    if (authorization) {
+      let result = Utils.verifyToken(authorization);
       let { uid } = result;
       if (uid) {
-        ctx.state = { uid, loginedtoken };
+        ctx.state = { uid, authorization };
         await next();
       } else {
         return ctx.body = Tips[1005];
