@@ -18,13 +18,13 @@ Login.register = async (ctx, next) => {
   if (!res) return ctx.body = Tips[1007];
   let { name, password, nick_name } = data;
   let uid = UUID.v1();
-  let is_delete = 0;
-  let create_time = new Date();
-  let sql = ' INSERT INTO  t_user (uid, name, password,nick_name, is_delete, create_time ) VALUES (?,?,?,?,?,?)', value = [uid, name, md5(password), nick_name, is_delete, create_time];
+  let u_delete = 0;
+  let u_date = new Date();
+  let sql = ' INSERT INTO  t_user (u_id, u_account, u_name, u_password,u_nickname, u_delete, u_date ) VALUES (?,?,?,?,?,?,?)', value = [uid, name,name, md5(password), nick_name, u_delete, u_date];
   await db.query(sql, value).then(res => {
     if (res.affectedRows == 1) {
       ctx.body = {
-        ...Tips[0], data: { name, nick_name, create_time }
+        ...Tips[0], data: { name, nick_name, u_date }
       }
     }
   }).catch(e => {
@@ -45,11 +45,11 @@ Login.login = async (ctx, next) => {
   ]);
   if (!res) return ctx.body = Tips[1007];
   let { name, password } = data;
-  let sql = 'SELECT uid FROM t_user WHERE name=? and password=? and is_delete=0', value = [name, md5(password)];
+  let sql = 'SELECT u_id FROM t_user WHERE u_name=? and u_password=? and u_delete=0', value = [name, md5(password)];
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
       let val = res[0];
-      let uid = val['uid'];
+      let uid = val['u_id'];
       let token = Utils.generateToken({ uid });
       // redis.setKey(uid, token);//redis设置
       // redis.setExpire(uid, 60 * 60 * 24);

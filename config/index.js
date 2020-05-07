@@ -18,7 +18,7 @@ module.exports = {
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'koa_demo',
+    database: 'account_db',
     port: 3306,
     multipleStatements: true
   }

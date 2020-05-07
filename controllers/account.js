@@ -6,8 +6,7 @@ const Account = {};
 // 查询用户账单列表
 Account.list = async (ctx, next) => {
   let { uid } = ctx.state || {};
-
-  let sql = 'SELECT account_name,account_desc,account_money,account_time, account_type, account_id FROM t_account WHERE uid=?', value = [uid];
+  let sql = 'SElECT pay.t_spend t_spend, pay.t_date t_date,pay.t_comment t_comment,type.t_type t_type from t_pay pay left join t_type type on pay.t_id = type.t_id where pay.u_id = ?', value = [uid];
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
       ctx.body = { ...Tips[0], data: { total: res.length, list: res } };
@@ -22,16 +21,15 @@ Account.list = async (ctx, next) => {
 }
 Account.add = async (ctx, next) => {
   let { uid } = ctx.state || {};
-  let data = Utils.filter(ctx.request.body, ['account_name', 'account_desc', 'account_type', 'account_money']);
+  let data = Utils.filter(ctx.request.body, [ 'account_desc', 'account_type', 'account_money']);
   let res = Utils.formatData(data, [
-    { key: 'account_name', type: 'string' },
     { key: 'account_desc', type: 'string' },
     { key: 'account_type', type: 'string' },
     { key: 'account_money', type: 'string' },
   ]);
   let account_time = new Date();
-  let { account_name, account_desc, account_type, account_money } = data;
-  let sql = ' INSERT INTO  t_account (uid, account_name, account_desc,account_type, account_money, account_time ) VALUES (?,?,?,?,?,?)', value = [uid, account_name, account_desc, account_type, account_money, account_time];
+  let {  account_desc, account_type, account_money } = data;
+  let sql = ' INSERT INTO  t_pay (u_id, t_comment,t_id, t_spend, t_date ) VALUES (?,?,?,?,?)', value = [uid, account_desc, account_type, account_money, account_time];
   await db.query(sql, value).then(res => {
     if (res.affectedRows == 1) {
       ctx.body = {
