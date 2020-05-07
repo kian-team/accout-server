@@ -48,7 +48,6 @@ Account.add = async (ctx, next) => {
 }
 
 Account.delete = async (ctx, next) => {
-  let { uid } = ctx.state || {};
   let data = Utils.filter(ctx.request.query, ['account_id',]);
   let res = Utils.formatData(data, [
     { key: 'account_id', type: 'string' },
@@ -64,11 +63,44 @@ Account.delete = async (ctx, next) => {
           message: '删除成功!'
         }
       }
-    }else{
+    } else {
       ctx.body = {
         ...Tips[1002],
-        data:{
-          message:'数据不存在!'
+        data: {
+          message: '数据不存在!'
+        }
+      };
+    }
+  }).catch(e => {
+    ctx.body = Tips[1002];
+  })
+}
+
+Account.update = async (ctx, next) => {
+  let data = Utils.filter(ctx.request.body, ['account_id', 'account_type', 'account_spend', 'account_date', 'account_comment']);
+  let res = Utils.formatData(data, [
+    { key: 'account_id', type: 'string' },
+    { key: 'account_type', type: 'string' },
+    { key: 'account_spend', type: 'string' },
+    { key: 'account_date', type: 'string' },
+    { key: 'account_comment', type: 'string' },
+  ]);
+  if (!res) return ctx.body = Tips[1007];
+  let { account_id, account_type, account_spend, account_date, account_comment } = data;
+  let sql = "UPDATE  t_pay set t_id=?, t_spend =?, t_comment=?, t_date=?  WHERE id=? ", value = [account_type,account_spend,account_comment,account_date,account_id];
+  await db.query(sql, value).then(res => {
+    if (res.affectedRows == 1) {
+      ctx.body = {
+        ...Tips[0],
+        data: {
+          message: '更新成功!'
+        }
+      }
+    } else {
+      ctx.body = {
+        ...Tips[1002],
+        data: {
+          message: '数据不存在!'
         }
       };
     }

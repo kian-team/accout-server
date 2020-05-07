@@ -8,4 +8,7 @@ router.post('/oa/account/addacount', Account.add)
 
 // 删除信息
 router.delete('/oa/account/delete', Account.delete);
+
+// 更新账单
+router.put('/oa/account/update', Account.update);
 module.exports = router;
