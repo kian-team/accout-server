@@ -36,11 +36,13 @@ INSERT INTO `t_earn` VALUES ('8e9a2a90-882f-11ea-bed2-6533bfd03577', '199', '000
 -- ----------------------------
 DROP TABLE IF EXISTS `t_pay`;
 CREATE TABLE `t_pay` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `u_id` varchar(50) NOT NULL COMMENT '用户id',
   `t_id` int(11) NOT NULL COMMENT '支出id',
   `t_spend` int(11) unsigned zerofill NOT NULL COMMENT '支出花费',
   `t_date` date DEFAULT NULL COMMENT '消费时间',
-  `t_comment` varchar(255) DEFAULT NULL COMMENT '备注信息'
+  `t_comment` varchar(255) DEFAULT NULL COMMENT '备注信息',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -91,4 +93,4 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('8e9a2a90-882f-11ea-bed2-6533bfd03577', 'hello', '1', '1', 'e10adc3949ba59abbe56e057f20f883e', '0', '2020-05-07', '', '');
+INSERT INTO `t_user` VALUES ('8e9a2a90-882f-11ea-bed2-6533bfd03577', 'admin', '1', '1', 'e10adc3949ba59abbe56e057f20f883e', '0', '2020-05-07', '', '');

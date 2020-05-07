@@ -1,11 +1,11 @@
 const router = require('koa-router')();
-const Utils = require('../utils');
-const Tips = require('../utils/tip');
-const db = require('../db');
 const Account = require('../controllers/account');
 // 查询用户账单列表
-router.get('/oa/user/list', Account.list)
+router.get('/oa/account/list', Account.list)
 
-router.post('/oa/user/addacount', Account.add)
+// 添加支出信息
+router.post('/oa/account/addacount', Account.add)
 
+// 删除信息
+router.delete('/oa/account/delete', Account.delete);
 module.exports = router;
