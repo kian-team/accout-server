@@ -51,8 +51,6 @@ Login.login = async (ctx, next) => {
       let val = res[0];
       let uid = val['u_id'];
       let token = Utils.generateToken({ uid });
-      // redis.setKey(uid, token);//redis设置
-      // redis.setExpire(uid, 60 * 60 * 24);
       ctx.body = {
         ...Tips[0], data: { token }
       }
@@ -77,16 +75,6 @@ Login.auth = async (ctx, next) => {
   } else {
     ctx.body = Tips[1005];
   }
-  // let sql = 'SELECT name,uid,nick_name FROM t_user WHERE uid=? AND is_delete=0', value = [uid];
-  // await db.query(sql, value).then(res => {
-  //   if (res && res.length > 0) {
-  //     ctx.body = { ...Tips[0], data: res[0] };
-  //   } else {
-  //     ctx.body = Tips[1005];
-  //   }
-  // }).catch(e => {
-  //   ctx.body = Tips[1005];
-  // })
 }
 //退出登录
 

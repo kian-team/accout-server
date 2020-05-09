@@ -6,7 +6,7 @@ const Account = {};
 // 查询用户账单列表
 Account.list = async (ctx, next) => {
   let { uid } = ctx.state || {};
-  let sql = 'SElECT pay.id id, pay.t_spend t_spend, pay.t_date t_date,pay.t_comment t_comment,type.t_type t_type from t_pay pay left join t_type type on pay.t_id = type.t_id where pay.u_id = ?', value = [uid];
+  let sql = 'SElECT pay.id id,pay.t_id t_type_id, pay.t_spend t_spend, pay.t_date t_date,pay.t_comment t_comment,type.t_type t_type from t_pay pay left join t_type type on pay.t_id = type.t_id where pay.u_id = ?', value = [uid];
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
       ctx.body = { ...Tips[0], data: { total: res.length, list: res } };
