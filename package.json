@@ -9,6 +9,7 @@
     "stop": "pm2 stop accoutapp && pm2 delete accoutapp"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "is": "^3.3.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
